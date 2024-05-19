@@ -1,0 +1,123 @@
+mqtt:
+  switch:
+    - unique_id: "sonoff_4ef934_ch1"
+      object_id: "sonoff_4ef934_ch1"
+      name: "开关"
+      state_topic: "sonoff/sonoff_4ef934/stat/power1"
+      command_topic: "sonoff/sonoff_4ef934/cmnd/power1"
+      payload_on: "on"
+      payload_off: "off"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+  sensor:
+    - unique_id: "sonoff_4ef934_voltage"
+      object_id: "sonoff_4ef934_voltage"
+      name: "电压"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.voltage }}"
+      unit_of_measurement: "V"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_current"
+      object_id: "sonoff_4ef934_current"
+      name: "电流"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.current }}"
+      unit_of_measurement: "A"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_power"
+      object_id: "sonoff_4ef934_power"
+      name: "功率"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.power }}"
+      unit_of_measurement: "W"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_apparent_power"
+      object_id: "sonoff_4ef934_apparent_power"
+      name: "视在功率"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.apparent_power }}"
+      unit_of_measurement: "VA"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_reactive_power"
+      object_id: "sonoff_4ef934_reactive_power"
+      name: "无功功率"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.reactive_power }}"
+      unit_of_measurement: "VAr"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_factor"
+      object_id: "sonoff_4ef934_factor"
+      name: "功率因数"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.factor }}"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_today"
+      object_id: "sonoff_4ef934_today"
+      name: "今天用电量"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.today }}"
+      unit_of_measurement: "kWh"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_yesterday"
+      object_id: "sonoff_4ef934_yesterday"
+      name: "昨天用电量"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.yesterday }}"
+      unit_of_measurement: "kWh"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_total"
+      object_id: "sonoff_4ef934_total"
+      name: "总用电量"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.total }}"
+      unit_of_measurement: "kWh"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
+    - unique_id: "sonoff_4ef934_starttime"
+      object_id: "sonoff_4ef934_starttime"
+      name: "开始时间"
+      state_topic: "sonoff/sonoff_4ef934/tele/energy"
+      value_template: "{{ value_json.starttime }}"
+      availability:
+        - topic: "sonoff/sonoff_4ef934/tele/availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+
